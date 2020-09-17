@@ -5,4 +5,16 @@
   </header>
   <div id="adcontainer">
   </div>
+  <script>
+    var text = '{ "advertisements" : [ { "text" : "test1" }, { "text" : "test2" }, { "text" : "adssadsadsa" } ] }';
+    var obj = JSON.parse(text);
+    
+    var container = document.getElementById('adbar').getElementById('adcontainer');
+    
+    for (i = 0; i < obj.advertisements.length(); i++) {
+      var adImage = document.createElement('p');
+      container.appendChild(adImage);
+      adImage.innerHTML = obj.advertisements[i].text;
+    }
+  </script>
 </div>
