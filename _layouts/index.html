@@ -7,6 +7,43 @@ layout: default
 
   {{ content }}
 
+  <script>
+    var adjson;
+
+    var loaded = false;
+
+    function createEvent() {
+      var invokeList = [];
+
+      var event = function() {
+          for (var i = 0; i < invokeList.length; i++) {
+              invokeList[i].apply(arguments);
+          }
+      }
+
+      event.add = function(value) {
+          invokeList[invokeList.length] = value;
+      }
+
+      return event;
+    }
+
+    onAdsLoaded = createEvent();
+    
+    console.log("doing the thing");
+    jQuery.getJSON(
+      "http://localhost:4000/assets/advertisements/ads.json",
+      (x, y, z) => {
+        adjson = x;
+        console.log(x);
+        console.log(adjson.ads[0]);
+        loaded = true;
+        onAdsLoaded();
+      }
+    );
+
+  </script>
+
   {% for post in paginator.posts %}
   <article class="post-body">
     <h2 class="post-title">
@@ -36,6 +73,11 @@ layout: default
       {% endif %}
     {% endif %}
   </article>
+
+  {% capture index %}{{ forloop.index }}{% endcapture %}
+
+  {% include advertisement.html param=index %}
+
   {% endfor %}
 
   {% include pagination-older.html %}

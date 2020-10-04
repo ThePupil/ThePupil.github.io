@@ -3,4 +3,18 @@
 # only main files contain this front matter, not partials.
 ---
 
+$orange: #f39338;
+$gray-1: #1f2223;
+$gray-2: #3a3f41;
+$gray-3: #767676;
+$gray-4: #ccc;
+$gray-5: #567076;
+$gray-6: #e8e6e3;
+
+$body-bg: $gray-1;
+$link-color: $orange;
+
+$sidebar-bg-color: $gray-2;
+$sidebar-fg-color: $orange;
+
 @import "hydeout";

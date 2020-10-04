@@ -1,0 +1,9 @@
+{ 
+    "ads" : [ 
+        { "text" : "test1" }, 
+        { "text" : "test2" }, 
+        { "text" : "adssadsadsa" },
+        { "text" : "adssadsadsa" },
+        { "text" : "adssadsadsa" }
+    ] 
+}
