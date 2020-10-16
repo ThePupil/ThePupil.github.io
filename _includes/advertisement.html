@@ -3,25 +3,11 @@
         <h2>Advertisement</h2>
     </header>
     <div class="adcontainer">
-        <script>
-            var adImage = document.createElement('p');
+        {% capture articleIndex %}{{ include.num }}{% endcapture %}
+        {{ site.categories.ad.posts[articleIndex].title }}
 
-            var container = document.currentScript.parentElement;
-
-            container.appendChild(adImage);
-
-            if (loaded) {
-                //adImage.innerHTML = adObject[{{ include.param }} - 1].text;
-                adImage.innerHTML = adjson.ads[{{ include.param }}].text;
-            } else {
-                onAdsLoaded.add(function() {
-                    console.log({{ include.param }} - 1);
-                    console.log(adjson.ads[{{ include.param }} - 1].text);
-                    //adImage.innerHTML = adjson.ads[{{ include.param }} - 1].text; 
-                    adImage.innerHTML = "test";
-                });
-            }
-        </script>
+        {{ articleIndex }}
+        <!--{{ site.categories[ad].posts[articleIndex].title }}-->
     </div>
     <hr>
 </div>

@@ -7,7 +7,7 @@ layout: default
 
   {{ content }}
 
-  <script>
+  <!--<script>
     var adjson;
 
     var loaded = false;
@@ -42,7 +42,7 @@ layout: default
       }
     );
 
-  </script>
+  </script>-->
 
   {% for post in paginator.posts %}
   <article class="post-body">
@@ -76,7 +76,7 @@ layout: default
 
   {% capture index %}{{ forloop.index }}{% endcapture %}
 
-  {% include advertisement.html param=index %}
+  {% include advertisement.html num=index %}
 
   {% endfor %}
 
