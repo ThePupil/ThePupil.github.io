@@ -1,4 +1,9 @@
-# Released under MIT License
+# The Pupil Website and Articles
+Copyright (c) 2020. All rights reserved.
+
+# Hydeout Jekyll Theme
+
+## Released under MIT License
 
 Copyright (c) 2013 Mark Otto.
 
